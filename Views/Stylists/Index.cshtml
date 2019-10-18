@@ -1,7 +1,17 @@
+@{
+    Layout = "_Layout";
+}
+
+
 @using HairSalon.Models;
 @model List<HairSalon.Models.Stylist>;
 
-<h1>Here are all of our stylists!</h1>
+
+@if(@Model.Count == 0)
+{
+    <h1>Currently no stylists. Please add one!</h1>
+}
+
 @foreach (Stylist stylist in Model)
 {
     <div class="card" style="width: 18rem;">
@@ -11,6 +21,8 @@
             </p>
         </div>
     </div>
-}
+}    
 
-<a href="/create">Add a Stylist!</a>
+
+
+<a href="stylists/create">Add a Stylist!</a>
