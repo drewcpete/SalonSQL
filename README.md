@@ -6,7 +6,7 @@ This application is for a salon. It allows the user to add new stylists, edit/de
 
 ### Prerequisites
 
-You will need to have mySQL workbench installed.
+You will need to have mySQL workbench and a web browser installed.
 
 ### Installation
 
