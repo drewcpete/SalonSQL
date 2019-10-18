@@ -1,0 +1,22 @@
+@{
+    Layout = "_Layout";
+}
+
+
+@model HairSalon.Models.Client
+
+<h3>Fill out this information to add a client!</h3>
+
+@using(Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new {@class="form-control"})
+        <br>
+        <br>
+        @Html.LabelFor(model => model.Stylist)
+        @Html.DropDownList("StylistId")
+    </div>
+    <br>
+    <input class="btn btn-info" type="submit" value="Save New Client">
+}
