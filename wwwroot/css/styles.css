@@ -22,3 +22,21 @@
   height: 80px;
 }
 
+.card-body
+{
+  margin: 15px;
+  background-color: blanchedalmond;
+}
+
+.card
+{
+  text-align: center;
+  margin-bottom: 25px;
+  border-width: 25px;
+  border-color: burlywood;
+}
+
+body
+{
+  background-color: azure;
+}

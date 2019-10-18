@@ -20,11 +20,13 @@
     <h5>Current Clients:</h5>
     @foreach (Client client in @Model.Clients)
     {
-        <div class="card" style="width: 7rem;">
+        <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <p class="card-text">
                 Name: @($"{client.Name}")
                 </p>
+                @*/<p>@Html.ActionLink("Delete Client", "Delete", new { id = Model[ClientId].ClientId })</p>/*@
+
             </div>
         </div>
     }
