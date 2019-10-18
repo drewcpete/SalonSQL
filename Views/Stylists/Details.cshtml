@@ -1,0 +1,31 @@
+@{
+    Layout = "_Layout";
+}
+
+@using HairSalon.Models;
+@model HairSalon.Models.Stylist;
+
+<h3>Stylist Details</h3>
+
+<br>
+<h4>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h4>
+<h5>@Html.DisplayNameFor(model => model.Price): @Html.DisplayFor(model => model.Price)</h5>
+<br>
+@if (@Model.Clients.Count == 0)
+{
+    <p>This stylist currently has no clients</p>
+}
+@if (@Model.Clients.Count > 0)
+{
+    <h5>Current Clients:</h5>
+    @foreach (Client client in @Model.Clients)
+    {
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <p class="card-text">
+                @Html.ActionLink($"{client.Name}", "Details", new { id = client.Id })
+            </p>
+        </div>
+    </div>
+    }
+}
