@@ -3,6 +3,7 @@ using HairSalon.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace HairSalon.Controllers
 {
@@ -37,6 +38,7 @@ namespace HairSalon.Controllers
         public ActionResult Details(int id)
         {
             Stylist stylist = _db.Stylists.Include(e => e.Clients).FirstOrDefault(e => e.Id == id);
+            
             return View(stylist);
         }
         

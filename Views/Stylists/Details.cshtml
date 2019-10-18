@@ -9,7 +9,7 @@
 
 <br>
 <h4>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h4>
-<h5>@Html.DisplayNameFor(model => model.Price): @Html.DisplayFor(model => model.Price)</h5>
+<h5>@Html.DisplayNameFor(model => model.Price): $@Html.DisplayFor(model => model.Price)</h5>
 <br>
 @if (@Model.Clients.Count == 0)
 {
@@ -20,13 +20,13 @@
     <h5>Current Clients:</h5>
     @foreach (Client client in @Model.Clients)
     {
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 7rem;">
             <div class="card-body">
                 <p class="card-text">
-                @Html.ActionLink($"{client.Name}", "Details", new { id = client.Id })
-            </p>
+                Name: @($"{client.Name}")
+                </p>
+            </div>
         </div>
-    </div>
     }
 }
 <br>
@@ -37,4 +37,4 @@
 @Html.ActionLink("Edit this stylist",  "Edit", new {id = @Model.Id})
 <br>
 <br>
-@Html.ActionLink("Delete this Stylist", "Delete", new {id = @Model.Id})
+@Html.ActionLink("Delete this stylist", "Delete", new {id = @Model.Id})
