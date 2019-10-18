@@ -1,0 +1,16 @@
+@using HairSalon.Models;
+@model List<HairSalon.Models.Stylist>;
+
+<h1>Here are all of our stylists!</h1>
+@foreach (Stylist stylist in Model)
+{
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <p class="card-text">
+            @Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.Id }) <br> @stylist.Price
+            </p>
+        </div>
+    </div>
+}
+
+<a href="/create">Add a Stylist!</a>
